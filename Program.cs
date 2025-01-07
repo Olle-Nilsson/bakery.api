@@ -9,3 +9,25 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 
 builder.Services.AddControllers();
+
+var app = builder.Build();
+
+using var scope = app.Services.CreateScope();
+
+var services = scope.ServiceProvider;
+try
+{
+    var context = services.GetRequiredService<DataContext>();
+    await context.Database.MigrateAsync();
+    // await Seed.LoadProducts(context);
+    // await Seed.LoadSalesOrders(context);
+    // await Seed.LoadOrderItems(context);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("{0}", ex.Message);
+    throw;
+}
+app.MapControllers();
+
+app.Run();
