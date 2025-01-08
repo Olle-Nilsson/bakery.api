@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Kungsörnen",
+        "address": "S:t Göransgatan 160 A",
+        "phoneNumber": "020-84 84 84",
+        "email": "kungsornen@lantmannen.se"
+    },
+    {
+        "id": 2,
+        "name": "Arla",
+        "address": "Rättarvägen 3",
+        "phoneNumber": "020-99 66 99",
+        "email": "info@arla.se"
+    }
+]

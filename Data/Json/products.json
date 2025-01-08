@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "itemNumber": "AA111",
+        "name": "Vetemjöl",
+        "kiloPrice": 9.75
+    },
+    {
+        "id": 2,
+        "itemNumber": "AA222",
+        "name": "Ägg",
+        "kiloPrice": 47.3
+    },
+    {
+        "id": 3,
+        "itemNumber": "BB333",
+        "name": "Jäst",
+        "kiloPrice": 70
+    },
+    {
+        "id": 4,
+        "itemNumber": "BBA444",
+        "name": "Mjölk",
+        "kiloPrice": 14.4
+    }
+]

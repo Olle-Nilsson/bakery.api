@@ -10,7 +10,7 @@ using bakery.api.Data;
 namespace bakery.api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250107160233_Initial Migration")]
+    [Migration("20250108144358_Initial Migration")]
     partial class InitialMigration
     {
         /// <inheritdoc />

@@ -1,0 +1,42 @@
+[
+    {
+        "productId": 1,
+        "manufacturerId": 1,
+        "kiloPrice": 10
+    },
+    {
+        "productId": 2,
+        "manufacturerId": 1,
+        "kiloPrice": 47
+    },
+    {
+        "productId": 3,
+        "manufacturerId": 1,
+        "kiloPrice": 100
+    },
+    {
+        "productId": 4,
+        "manufacturerId": 1,
+        "kiloPrice": 14.4
+    },
+    {
+        "productId": 1,
+        "manufacturerId": 2,
+        "kiloPrice": 9.75
+    },
+    {
+        "productId": 2,
+        "manufacturerId": 2,
+        "kiloPrice": 48.7
+    },
+    {
+        "productId": 3,
+        "manufacturerId": 2,
+        "kiloPrice": 60
+    },
+    {
+        "productId": 4,
+        "manufacturerId": 2,
+        "kiloPrice": 14.4
+    }
+]

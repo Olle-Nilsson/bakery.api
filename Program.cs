@@ -19,9 +19,9 @@ try
 {
     var context = services.GetRequiredService<DataContext>();
     await context.Database.MigrateAsync();
-    // await Seed.LoadProducts(context);
-    // await Seed.LoadSalesOrders(context);
-    // await Seed.LoadOrderItems(context);
+    await Seed.LoadProducts(context);
+    await Seed.LoadManufacturers(context);
+    await Seed.LoadProductmanufacturers(context);
 }
 catch (Exception ex)
 {
