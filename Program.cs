@@ -20,8 +20,8 @@ try
     var context = services.GetRequiredService<DataContext>();
     await context.Database.MigrateAsync();
     await Seed.LoadProducts(context);
-    await Seed.LoadManufacturers(context);
-    await Seed.LoadProductmanufacturers(context);
+    await Seed.LoadSuppliers(context);
+    await Seed.LoadProductSuppliers(context);
 }
 catch (Exception ex)
 {

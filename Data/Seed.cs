@@ -23,41 +23,42 @@ namespace bakery.api.Data
                 await context.SaveChangesAsync();
             }
         }
-        public static async Task LoadManufacturers(DataContext context)
+        public static async Task LoadSuppliers(DataContext context)
         {
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
 
-            if (context.Manufacturers.Any()) return;
+            if (context.Suppliers.Any()) return;
 
-            var json = File.ReadAllText("Data/json/manufacturers.json");
-            var manufacturers = JsonSerializer.Deserialize<List<Manufacturer>>(json, options);
+            var json = File.ReadAllText("Data/json/suppliers.json");
+            var suppliers = JsonSerializer.Deserialize<List<Supplier>>(json, options);
 
-            if (manufacturers is not null && manufacturers.Count > 0)
+            if (suppliers is not null && suppliers.Count > 0)
             {
-                await context.Manufacturers.AddRangeAsync(manufacturers);
+                await context.Suppliers.AddRangeAsync(suppliers);
                 await context.SaveChangesAsync();
             }
         }
-        public static async Task LoadProductmanufacturers(DataContext context)
+        public static async Task LoadProductSuppliers(DataContext context)
         {
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
 
-            if (context.ProductManufacturers.Any()) return;
+            if (context.ProductSuppliers.Any()) return;
 
-            var json = File.ReadAllText("Data/json/productManufacturers.json");
-            var productManufacturer = JsonSerializer.Deserialize<List<ProductManufacturer>>(json, options);
+            var json = File.ReadAllText("Data/json/productSuppliers.json");
+            var productSuppliers = JsonSerializer.Deserialize<List<ProductSupplier>>(json, options);
 
-            if (productManufacturer is not null && productManufacturer.Count > 0)
+            if (productSuppliers is not null && productSuppliers.Count > 0)
             {
-                await context.ProductManufacturers.AddRangeAsync(productManufacturer);
+                await context.ProductSuppliers.AddRangeAsync(productSuppliers);
                 await context.SaveChangesAsync();
             }
         }
+
     }
 }

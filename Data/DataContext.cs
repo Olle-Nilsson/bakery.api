@@ -3,17 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace bakery.api.Data;
 
-public class DataContext : DbContext
+public class DataContext(DbContextOptions options) : DbContext(options)
 {
-    public DbSet<Manufacturer> Manufacturers { get; set; }
+    public DbSet<Supplier> Suppliers { get; set; }
     public DbSet<Product> Products { get; set; }
-    public DbSet<ProductManufacturer> ProductManufacturers { get; set; }
-
-    public DataContext(DbContextOptions options) : base(options)
-    {
-    }
+    public DbSet<ProductSupplier> ProductSuppliers { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<ProductManufacturer>().HasKey(pm => new { pm.ProductId, pm.ManufacturerId });
+        modelBuilder.Entity<ProductSupplier>().HasKey(pm => new { pm.ProductId, pm.SupplierId });
     }
 }
