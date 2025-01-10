@@ -15,16 +15,6 @@
         "kiloPrice": 100
     },
     {
-        "productId": 4,
-        "supplierId": 1,
-        "kiloPrice": 14.4
-    },
-    {
-        "productId": 1,
-        "supplierId": 2,
-        "kiloPrice": 9.75
-    },
-    {
         "productId": 2,
         "supplierId": 2,
         "kiloPrice": 48.7
