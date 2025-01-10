@@ -81,7 +81,14 @@ public class ProductsController(DataContext context) : ControllerBase
         {
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
 
+        try
+        {
             foreach (var ps in model.ProductSuppliers)
             {
                 var productSupplier = new ProductSupplier
@@ -94,19 +101,21 @@ public class ProductsController(DataContext context) : ControllerBase
             }
 
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(FindProducts), new { id = product.ProductId }, new
-            {
-                product.ProductId,
-                product.ItemNumber,
-                product.Name,
-                product.KiloPrice
-            });
         }
         catch (Exception ex)
         {
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
             return BadRequest(ex.Message);
         }
+
+        return CreatedAtAction(nameof(FindProducts), new { id = product.ProductId }, new
+        {
+            product.ProductId,
+            product.ItemNumber,
+            product.Name,
+            product.KiloPrice
+        });
     }
     [HttpPatch("{id}")]
     public async Task<ActionResult> UpdatePrice(int id, [FromQuery] int supplierId, [FromQuery] double price)
